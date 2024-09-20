@@ -1,0 +1,107 @@
+/* styles.css */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box ;
+}
+
+    .navbar{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        padding: 10px 0;
+        z-index: 1000;
+    }
+
+    .container-fluid{
+        max-width: 1300px;
+        margin:0 auto;
+        padding: 10px 15px;
+        background-color: #333;
+    }
+
+    .navbar-brand{
+        color: #fff;
+        font-size: 24px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    .navbar-nav{
+        list-style: none;
+    }
+
+    .navbar-nav li{
+        display: inline-block;
+        margin-right: 20px;
+    }
+
+    .navbar-nav li a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .navbar-nav li a:hover {
+        color: #ffc107;
+    }
+.schedule {
+    display: flex;
+    justify-content: space-between;
+    width: 300px; /* Adjust width as needed */
+}
+
+.days,
+.times {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.days li {
+    margin-bottom: 10px;
+}
+
+.times li {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+#map {
+    height: 400px; /* Set map height */
+    width: 100%; /* Set map width */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+
+.social-icon {
+    margin: 0 5px;
+    font-size: 24px;
+    color: #42e611;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .social-icon {
+    opacity: 1;
+}
+
+.animate-card {
+    animation: moveCard 3s linear infinite;
+}
+
+@keyframes moveCard {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
