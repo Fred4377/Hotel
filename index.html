@@ -6,12 +6,13 @@
     <title>Grand Horizon Hotel | Luxury Redefined</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
+    <!-- Font Awesome (using CDN to save local space) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+    <!-- Main Navigation -->
     <nav>
         <div class="logo">Grand Horizon</div>
         <ul>
@@ -20,11 +21,12 @@
             <li><a href="menu.html">Menu</a></li>
             <li><a href="reservation.html">Reservation</a></li>
             <li><a href="gallary.html">Gallary</a></li>
-            <li><a href="our chef.html">Our Chef</a></li>
+            <li><a href="our chef.html">Our Chef</a></li> <!-- typo in filename? keep it to avoid breaking links -->
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
+    <!-- Hero Section with Typewriter Effect -->
     <header id="home">
         <div class="cinematic-bg">
             <img src="media/bg-home.jpg" alt="Background 1">
@@ -33,10 +35,12 @@
         </div>
         <div class="cinematic-overlay"></div>
         <h1 class="hero-title" style="position:relative; z-index:2;">Grand Horizon Hotel</h1>
+        <!-- Using a cool typewriter effect for the subtitle -->
         <p class="hero-subtitle" style="position:relative; z-index:2;"><span class="typewriter" data-words='["Experience Luxury Redefined", "Your Perfect Getaway", "Welcome to Paradise"]' data-wait="3000"></span></p>
         <a href="reservation.html" class="btn-gold">Book Your Stay</a>
     </header>
 
+    <!-- Rooms Display -->
     <section id="rooms">
         <h2 class="section-title">Our Suites</h2>
         <p class="section-subtitle">Discover Your Perfect Escape</p>
@@ -85,11 +89,13 @@
         </div>
     </section>
 
+    <!-- Amenities Section -->
     <section id="amenities" style="background: var(--dark-surface);">
         <h2 class="section-title">World-Class Facilities</h2>
         <p class="section-subtitle">Everything you need for a perfect stay</p>
         
-        <div class="rooms-grid"> <!-- Re-using the same styling as room cards for consistency -->
+        <!-- Re-using the same styling as room cards for consistency -->
+        <div class="rooms-grid"> 
             <div class="room-card">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Infinity_pool_at_Marina_Bay_Sands_Hotel.jpg" alt="Infinity Pool" class="room-img">
                 <div class="room-info" style="padding: 20px;">
@@ -97,6 +103,7 @@
                 </div>
             </div>
             <div class="room-card">
+                <!-- TODO: get higher res photo from the photographer -->
                 <img src="media/fac2.jpg" alt="Luxury Spa" class="room-img">
                 <div class="room-info" style="padding: 20px;">
                     <h3>Luxury Spa</h3>
@@ -124,8 +131,7 @@
         <p style="margin-top: 40px; font-size: 0.9rem;">&copy; 2026 Grand Horizon. Built by Fred Otieno.</p>
     </footer>
 
+    <!-- App Scripts -->
     <script src="js/main.js"></script>
 </body>
 </html>
-
-

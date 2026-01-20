@@ -58,10 +58,39 @@ document.addEventListener('DOMContentLoaded', init);
 // Init App
 function init() {
     const txtElement = document.querySelector('.typewriter');
+    // TODO: Maybe add a fallback if JSON parsing fails? 
+    // Works fine for now since the array is hardcoded in HTML.
     if(txtElement) {
         const words = JSON.parse(txtElement.getAttribute('data-words'));
         const wait = txtElement.getAttribute('data-wait');
         // Init TypeWriter
         new TypeWriter(txtElement, words, wait);
     }
+    
+    // Add scroll reveal animations for that premium feel
+    initScrollReveal();
+}
+
+// Scroll reveal logic (vanilla js is better than loading a heavy library just for this)
+function initScrollReveal() {
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Grab anything we want to fade in
+    document.querySelectorAll('.room-card, .section-title, .section-subtitle').forEach(el => {
+        el.classList.add('fade-up-element'); // add base class
+        observer.observe(el);
+    });
 }
