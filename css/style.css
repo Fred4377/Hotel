@@ -1,107 +1,320 @@
-/* styles.css */
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing:border-box ;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap');
+
+:root {
+    --gold: #d4a574;
+    --gold-light: #f5deb3;
+    --dark-bg: #0a0a0a;
+    --dark-surface: #141414;
+    --text-light: #ffffff;
+    --text-muted: #9ca3af;
 }
 
-    .navbar{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: #333;
-        padding: 10px 0;
-        z-index: 1000;
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 
-    .container-fluid{
-        max-width: 1300px;
-        margin:0 auto;
-        padding: 10px 15px;
-        background-color: #333;
-    }
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    line-height: 1.6;
+}
 
-    .navbar-brand{
-        color: #fff;
-        font-size: 24px;
-        font-weight: bold;
-        text-decoration: none;
-    }
-    .navbar-nav{
-        list-style: none;
-    }
+h1, h2, h3, h4, h5 {
+    font-family: 'Playfair Display', serif;
+}
 
-    .navbar-nav li{
-        display: inline-block;
-        margin-right: 20px;
-    }
-
-    .navbar-nav li a {
-        color: #fff;
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-
-    .navbar-nav li a:hover {
-        color: #ffc107;
-    }
-.schedule {
+/* Glass Navbar */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 5%;
     display: flex;
     justify-content: space-between;
-    width: 300px; /* Adjust width as needed */
+    align-items: center;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(15px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(212, 165, 116, 0.2);
 }
 
-.days,
-.times {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
-.days li {
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+/* Page Headers (for subpages) */
+.page-header {
+    padding: 150px 5% 50px;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('../media/PX2.jpeg') center/cover;
+    border-bottom: 1px solid rgba(212, 165, 116, 0.2);
+}
+
+/* Hero (Home Page) */
+header#home {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-title {
+    font-size: 5rem;
+    font-style: italic;
+    color: var(--gold);
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 20px rgba(212, 165, 116, 0.3);
+    animation: fadeInDown 1s ease-out;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.btn-gold {
+    display: inline-block;
+    padding: 15px 40px;
+    background: transparent;
+    color: var(--gold);
+    border: 2px solid var(--gold);
+    text-decoration: none;
+    font-family: 'Outfit', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+
+.btn-gold:hover {
+    background: var(--gold);
+    color: var(--dark-bg);
+    box-shadow: 0 0 20px rgba(212, 165, 116, 0.4);
+}
+
+/* Sections */
+section {
+    padding: 80px 5%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    color: var(--gold);
     margin-bottom: 10px;
 }
 
-.times li {
-    text-align: right;
-    margin-bottom: 10px;
+.section-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
 }
 
-#map {
-    height: 400px; /* Set map height */
-    width: 100%; /* Set map width */
+/* Cards (Rooms, Menu, Chef) */
+.rooms-grid, .menu-grid, .chef-grid, .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
 }
 
-.social-icons {
+.room-card, .menu-card, .chef-card {
+    background: var(--dark-surface);
+    border: 1px solid rgba(212, 165, 116, 0.1);
+    transition: transform 0.4s;
+}
+
+.room-card:hover, .menu-card:hover, .chef-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--gold);
+}
+
+.room-img, .menu-img, .chef-img {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.room-info, .menu-info, .chef-info {
+    padding: 30px;
+    text-align: center;
+}
+
+.room-info h3, .menu-info h3, .chef-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--text-light);
+}
+
+.price {
+    color: var(--gold);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.amenities {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    gap: 15px;
+    color: var(--text-muted);
+    margin-bottom: 25px;
 }
 
-
-.social-icon {
-    margin: 0 5px;
-    font-size: 24px;
-    color: #42e611;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+/* Features */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    text-align: center;
 }
 
-.card:hover .social-icon {
-    opacity: 1;
+.feature {
+    padding: 40px 20px;
+    background: var(--dark-surface);
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: all 0.3s;
 }
 
-.animate-card {
-    animation: moveCard 3s linear infinite;
+.feature:hover {
+    background: rgba(212, 165, 116, 0.05);
+    border-color: var(--gold);
 }
 
-@keyframes moveCard {
-    0% {
-        transform: translateX(0);
-    }
+.feature i {
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 20px;
+}
 
-    100% {
-        transform: translateX(-100%);
-    }
+/* Forms */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--gold);
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(212, 165, 116, 0.2);
+    color: white;
+    font-family: 'Outfit', sans-serif;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--gold);
+}
+
+/* Footer */
+footer {
+    background: var(--dark-surface);
+    text-align: center;
+    padding: 50px 20px;
+    border-top: 1px solid rgba(212, 165, 116, 0.2);
+}
+
+footer p {
+    color: var(--text-muted);
+    margin-top: 20px;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Specific Page Utilities */
+.about-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-flex img {
+    flex: 1;
+    min-width: 300px;
+    max-width: 100%;
+    border-radius: 8px;
+    border: 1px solid rgba(212, 165, 116, 0.2);
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    color: var(--text-muted);
+}
+
+/* Submenu Links */
+.submenu-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.submenu-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 8px 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s;
+}
+
+.submenu-links a:hover, .submenu-links a.active {
+    color: var(--dark-bg);
+    background: var(--gold);
+    border-color: var(--gold);
 }

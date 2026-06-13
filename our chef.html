@@ -3,122 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Our Chef | Grand Horizon Hotel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .social-icons {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            color: var(--text-muted);
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--gold);
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Osteriax</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link "  href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">ABOUT US</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="menu.html">MENU</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " href="reservation.html">RESERVATION</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " href="gallary.html">GALLARY</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " href="our chef.html">OUR CHEF</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " href="contact.html">CONTACT</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav><br><br><br><br>
-      <div class="container">
+
+    <nav>
+        <div class="logo">Grand Horizon</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="reservation.html">Reservation</a></li>
+            <li><a href="gallary.html">Gallary</a></li>
+            <li><a href="our chef.html">Our Chef</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-header">
+        <h1 class="hero-title" style="font-size: 3.5rem;">Master Chefs</h1>
+        <p class="hero-subtitle" style="font-size: 0.9rem;">The culinary artists behind our flavors</p>
+    </header>
+
+    <section id="chefs">
+        <h2 class="section-title">Our Professionals</h2>
+        <p class="section-subtitle">Meet our award-winning culinary team</p>
         
-        <h2  style="color: orange; font-style: italic; text-align: center;">Our Professionals</h2>
-        <h2 style="text-align: center;">MASTER CHEFS</h2>
-        <div class="row row-cols-1 row-cols-md-4 g-4">
-            <div class="col-md-3">
-                <div class="card animate-card" >
-                  
+        <div class="chef-grid">
+            <div class="chef-card">
+                <img src="media/chef-1.jpg" alt="Chef" class="chef-img">
+                <div class="chef-info">
+                    <h3>Marcus Dubois</h3>
+                    <p class="price" style="font-size: 1rem;">Executive Chef</p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">With over 20 years of experience in Michelin-starred restaurants across Europe.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
 
-                    <img src="media/chef-1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <div class="social-icons">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                      </div>
+            <div class="chef-card">
+                <img src="media/chef-2.jpg" alt="Chef" class="chef-img">
+                <div class="chef-info">
+                    <h3>Elena Rossi</h3>
+                    <p class="price" style="font-size: 1rem;">Pastry Chef</p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Mastering the art of desserts, Elena brings sweet perfection to every plate.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
-                  </div>
-                    
-                  </div>
+                </div>
+            </div>
+
+            <div class="chef-card">
+                <img src="media/chef-3.jpg" alt="Chef" class="chef-img">
+                <div class="chef-info">
+                    <h3>Kenji Tanaka</h3>
+                    <p class="price" style="font-size: 1rem;">Sushi Master</p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Bringing authentic Japanese flavors and precision to our Asian fusion menu.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
             
-            <div class="col-md-3">
-                <div class="card animate-card" >
-                  
-                    <img src="media/chef-2.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <div class="social-icons">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                      </div>
+            <div class="chef-card">
+                <img src="media/chef-4.jpg" alt="Chef" class="chef-img">
+                <div class="chef-info">
+                    <h3>Sarah Jenkins</h3>
+                    <p class="price" style="font-size: 1rem;">Sous Chef</p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">The backbone of our kitchen operations, ensuring quality in every dish.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
-                    
-                  </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card animate-card" >
-                    <img src="media/chef-3.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <div class="social-icons">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                      </div>
-                    </div>
-                    
-                  </div>
-            </div>
-            <div class="col-3">
-                <div class="card animate-card">
-                    <img src="media/chef-4.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <div class="social-icons">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                      </div>
-                    </div>
-                    
-      <!-- Add more social media icons as needed -->
-                  </div>
+                </div>
             </div>
         </div>
-      </div>
-      
+    </section>
 
+    <footer>
+        <h2 style="color: var(--gold); font-family: 'Playfair Display', serif; margin-bottom: 20px;">Grand Horizon</h2>
+        <p>123 Luxury Avenue, Paradise City</p>
+        <p>contact@grandhorizon.com | +1 234 567 8900</p>
+        <p style="margin-top: 40px; font-size: 0.9rem;">&copy; 2026 Grand Horizon. Built by Fred Otieno.</p>
+    </footer>
 
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
 </body>
 </html>
