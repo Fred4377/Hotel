@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grand Horizon Hotel | Luxury Redefined</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
     <!-- Font Awesome (using CDN to save local space) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -42,48 +42,48 @@
 
     <!-- Rooms Display -->
     <section id="rooms">
-        <h2 class="section-title">Our Suites</h2>
-        <p class="section-subtitle">Discover Your Perfect Escape</p>
+        <h2 class="section-title">Luxury Lodges & Suites</h2>
+        <p class="section-subtitle">Experience the finest Kenyan destinations</p>
         
         <div class="rooms-grid">
             <div class="room-card">
-                <img src="media/room3.jpg" alt="Deluxe Room" class="room-img">
+                <img src="media/room3.jpg" alt="Diani Beach Ocean Suite" class="room-img">
                 <div class="room-info">
-                    <h3>Deluxe Suite</h3>
-                    <p class="price">$299 / Night</p>
+                    <h3>Diani Beach Ocean Suite</h3>
+                    <p class="price">KSh 35,000 / Night</p>
                     <div class="amenities">
                         <i class="fas fa-wifi"></i>
                         <i class="fas fa-tv"></i>
                         <i class="fas fa-bath"></i>
                     </div>
-                    <a href="reservation.html" class="btn-gold" style="padding: 10px 25px; font-size: 0.8rem;">Reserve</a>
+                    <a href="javascript:void(0)" class="btn-gold reserve-room-btn" data-room="Diani Beach Ocean Suite" data-price="35000" style="padding: 10px 25px; font-size: 0.8rem;">Reserve</a>
                 </div>
             </div>
 
             <div class="room-card">
-                <img src="media/room2.jpg" alt="Premium Room" class="room-img">
+                <img src="media/room2.jpg" alt="Mara River Luxury Tent" class="room-img">
                 <div class="room-info">
-                    <h3>Premium Room</h3>
-                    <p class="price">$199 / Night</p>
+                    <h3>Mara River Luxury Tent</h3>
+                    <p class="price">KSh 42,000 / Night</p>
                     <div class="amenities">
                         <i class="fas fa-wifi"></i>
                         <i class="fas fa-tv"></i>
                         <i class="fas fa-coffee"></i>
                     </div>
-                    <a href="reservation.html" class="btn-gold" style="padding: 10px 25px; font-size: 0.8rem;">Reserve</a>
+                    <a href="javascript:void(0)" class="btn-gold reserve-room-btn" data-room="Mara River Luxury Tent" data-price="42000" style="padding: 10px 25px; font-size: 0.8rem;">Reserve</a>
                 </div>
             </div>
 
             <div class="room-card">
-                <img src="media/room1.jpg" alt="Standard Room" class="room-img">
+                <img src="media/room1.jpg" alt="Naivasha Lakeview Pavilion" class="room-img">
                 <div class="room-info">
-                    <h3>Standard Room</h3>
-                    <p class="price">$149 / Night</p>
+                    <h3>Naivasha Lakeview Pavilion</h3>
+                    <p class="price">KSh 22,000 / Night</p>
                     <div class="amenities">
                         <i class="fas fa-wifi"></i>
                         <i class="fas fa-tv"></i>
                     </div>
-                    <a href="reservation.html" class="btn-gold" style="padding: 10px 25px; font-size: 0.8rem;">Reserve</a>
+                    <a href="javascript:void(0)" class="btn-gold reserve-room-btn" data-room="Naivasha Lakeview Pavilion" data-price="22000" style="padding: 10px 25px; font-size: 0.8rem;">Reserve</a>
                 </div>
             </div>
         </div>
@@ -125,13 +125,159 @@
     </section>
 
     <footer id="contact">
-        <h2 style="color: var(--gold); font-family: 'Playfair Display', serif; margin-bottom: 20px;">Grand Horizon</h2>
-        <p>123 Luxury Avenue, Paradise City</p>
-        <p>contact@grandhorizon.com | +1 234 567 8900</p>
+        <h2 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; margin-bottom: 20px;">Grand Horizon</h2>
+        <p>Diani Coast Road, Mombasa, Kenya</p>
+        <p>reservations@grandhorizon.co.ke | +254 712 345 678</p>
         <p style="margin-top: 40px; font-size: 0.9rem;">&copy; 2026 Grand Horizon. Built by Fred Otieno.</p>
     </footer>
 
+    <!-- ===== ROOM BOOKING DEPOSIT MODAL ===== -->
+    <div id="hotelReserveModal" class="modal-overlay">
+        <div class="modal-box">
+            <button class="modal-close" id="closeHotelModal">&times;</button>
+            <h3 class="modal-title">Secure Room Deposit</h3>
+            <p style="font-size: 0.82rem; color: var(--text-muted); text-align: center; margin-bottom: 20px;">
+                Secure your suite reservation with a KSh 5,000 M-Pesa room deposit.
+            </p>
+            
+            <div class="modal-body">
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(212,175,55,0.2); border-radius: 4px; padding: 14px; margin-bottom: 20px; font-size: 0.9rem;">
+                    <div style="margin-bottom: 6px;"><strong>Selected Room:</strong> <span id="reserveRoomName">Mara River Luxury Tent</span></div>
+                    <div><strong>Deposit Amount:</strong> <span style="color: var(--gold); font-weight: 700;">KSh 5,000</span></div>
+                </div>
+
+                <div class="form-group">
+                    <label style="display: block; margin-bottom: 6px; font-size: 0.78rem; text-transform: uppercase; color: var(--gold);">Full Name</label>
+                    <input type="text" id="reserveCustomerName" class="form-control" placeholder="Enter guest name" style="border-radius: 4px; background: rgba(0,0,0,0.2);">
+                </div>
+
+                <div class="form-group">
+                    <label style="display: block; margin-bottom: 6px; font-size: 0.78rem; text-transform: uppercase; color: var(--gold);">M-Pesa Phone Number</label>
+                    <input type="tel" id="reserveMpesaPhone" class="form-control" placeholder="e.g. 0712345678" style="border-radius: 4px; background: rgba(0,0,0,0.2);">
+                </div>
+
+                <button class="btn-gold" id="btnInitiateHotelStk" style="width: 100%; margin-top: 10px; padding: 14px 20px;">
+                    Send M-Pesa STK Push
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- M-Pesa Prompt Simulation -->
+    <div id="hotelMpesaPrompt" class="phone-overlay">
+        <div class="phone-prompt-box">
+            <div class="sim-header">LIPA NA M-PESA</div>
+            <div class="sim-body">
+                <p>Do you want to pay <strong>KSh 5,000</strong> to <strong>Grand Horizon Hotel</strong>?</p>
+                <div class="sim-input-group">
+                    <label>Enter M-Pesa PIN:</label>
+                    <input type="password" id="hotelMpesaPin" maxlength="4" class="sim-input" placeholder="••••">
+                </div>
+                <div id="hotelMpesaStatus" style="margin-top: 10px; font-size: 0.75rem; text-align: center; color: #1e3a8a; font-weight: 600; min-height: 15px;"></div>
+            </div>
+            <div class="sim-footer">
+                <button id="btnCancelHotelPrompt">Cancel</button>
+                <button id="btnSendHotelPrompt">Send</button>
+            </div>
+        </div>
+    </div>
+
     <!-- App Scripts -->
     <script src="js/main.js"></script>
+    <script>
+        // Interactive modal booking logic
+        const reserveRoomBtns = document.querySelectorAll('.reserve-room-btn');
+        const hotelReserveModal = document.getElementById('hotelReserveModal');
+        const closeHotelModal = document.getElementById('closeHotelModal');
+        const reserveRoomName = document.getElementById('reserveRoomName');
+        const btnInitiateHotelStk = document.getElementById('btnInitiateHotelStk');
+        
+        const hotelMpesaPrompt = document.getElementById('hotelMpesaPrompt');
+        const hotelMpesaPin = document.getElementById('hotelMpesaPin');
+        const btnCancelHotelPrompt = document.getElementById('btnCancelHotelPrompt');
+        const btnSendHotelPrompt = document.getElementById('btnSendHotelPrompt');
+        const hotelMpesaStatus = document.getElementById('hotelMpesaStatus');
+
+        reserveRoomBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const room = btn.getAttribute('data-room');
+                reserveRoomName.textContent = room;
+                hotelReserveModal.classList.add('active');
+            });
+        });
+
+        closeHotelModal.addEventListener('click', () => {
+            hotelReserveModal.classList.remove('active');
+        });
+
+        hotelReserveModal.addEventListener('click', (e) => {
+            if (e.target === hotelReserveModal) {
+                hotelReserveModal.classList.remove('active');
+            }
+        });
+
+        btnInitiateHotelStk.addEventListener('click', () => {
+            const name = document.getElementById('reserveCustomerName').value.trim();
+            const phone = document.getElementById('reserveMpesaPhone').value.trim();
+            
+            if (!name || !phone) {
+                alert("Please fill in both name and M-Pesa phone number.");
+                return;
+            }
+
+            if (!/^(?:254|\+254|0)?(7|1)[0-9]{8}$/.test(phone)) {
+                alert("Please enter a valid Safaricom phone number.");
+                return;
+            }
+
+            btnInitiateHotelStk.disabled = true;
+            btnInitiateHotelStk.textContent = "Sending STK Push prompt...";
+
+            setTimeout(() => {
+                btnInitiateHotelStk.disabled = false;
+                btnInitiateHotelStk.textContent = "Send M-Pesa STK Push";
+                hotelReserveModal.classList.remove('active');
+                
+                // Open phone simulator prompt
+                hotelMpesaPrompt.classList.add('active');
+                hotelMpesaPin.value = '';
+                hotelMpesaPin.focus();
+                hotelMpesaStatus.textContent = '';
+            }, 1200);
+        });
+
+        btnCancelHotelPrompt.addEventListener('click', () => {
+            hotelMpesaPrompt.classList.remove('active');
+        });
+
+        btnSendHotelPrompt.addEventListener('click', () => {
+            const pin = hotelMpesaPin.value.trim();
+            if (pin.length !== 4) {
+                hotelMpesaStatus.style.color = '#ef4444';
+                hotelMpesaStatus.textContent = 'Invalid PIN! Please enter 4 digits.';
+                return;
+            }
+
+            hotelMpesaStatus.style.color = '#1e3a8a';
+            hotelMpesaStatus.textContent = 'Verifying room deposit...';
+            btnSendHotelPrompt.disabled = true;
+            btnCancelHotelPrompt.disabled = true;
+
+            setTimeout(() => {
+                btnSendHotelPrompt.disabled = false;
+                btnCancelHotelPrompt.disabled = false;
+                hotelMpesaPrompt.classList.remove('active');
+
+                // Generate fake transaction
+                const codeChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+                let txn = "HG";
+                for (let i = 0; i < 8; i++) txn += codeChars.charAt(Math.floor(Math.random() * codeChars.length));
+
+                alert(`Deposit Confirmed!\n\nTransaction ID: ${txn}\nAmount: KSh 5,000\nSuite: ${reserveRoomName.textContent}\n\nThank you for booking with Grand Horizon Resort!`);
+                document.getElementById('reserveCustomerName').value = '';
+                document.getElementById('reserveMpesaPhone').value = '';
+            }, 2000);
+        });
+    </script>
 </body>
 </html>
