@@ -10,6 +10,16 @@
     --accent-blue: #0A192F; /* Deep Royal Navy */
     --text-light: #2D3748;  /* Soft Charcoal */
     --text-muted: #64748B;
+    --transition-spring: transform 0.6s linear(
+        0, 0.0121, 0.0478, 0.1057, 0.1834, 0.2774, 0.3837, 0.4975, 0.6139, 0.7274, 0.8327, 0.9251, 1.0006, 1.0565, 
+        1.0917, 1.1076, 1.1058, 1.0888, 1.0601, 1.0232, 0.9823, 0.9419, 0.9066, 0.8804, 0.8654, 0.8617, 0.8691, 
+        0.8859, 0.9103, 0.9404, 0.9734, 1.0063, 1.0366, 1.0621, 1.0812, 1.0924, 1.0959, 1.0927, 1.0827, 1.0681, 
+        1.0506, 1.0319, 1.0138, 0.9976, 0.9845, 0.9752, 0.9706, 0.9705, 0.9749, 0.9827, 0.9926, 1.0033, 1.0135, 
+        1.0223, 1.0289, 1.0326, 1.0337, 1.0317, 1.0271, 1.0205, 1.0129, 1.0051, 0.998, 0.992, 0.9877, 0.9856, 
+        0.9859, 0.9885, 0.9928, 0.9982, 1.0042, 1.0099, 1.0146, 1.0177, 1.0191, 1.0189, 1.0171, 1.0143, 1.0109, 
+        1.0074, 1.0041, 1.0014, 0.9995, 0.9984, 0.9981, 0.9985, 0.9994, 1.0006, 1.0019, 1.0029, 1.0036, 1.0039, 
+        1.0038, 1.0033, 1.0026, 1.0018, 1.001, 1.0003, 0.9998, 0.9995, 0.9994, 0.9995, 0.9997, 1
+    );
 }
 
 * {
@@ -152,7 +162,7 @@ header#home {
     letter-spacing: 3px;
     font-size: 0.85rem;
     font-weight: 600;
-    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: var(--transition-spring), color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
     position: relative;
     overflow: hidden;
@@ -174,8 +184,9 @@ header#home {
 
 .btn-gold:hover {
     color: var(--dark-bg);
-    box-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
     border-color: transparent;
+    transform: translateY(-4px) scale(1.03);
 }
 
 /* Sections */
@@ -226,14 +237,14 @@ section:nth-of-type(odd) {
     border: 1px solid #E2E8F0;
     border-radius: 0px;
     overflow: hidden;
-    transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: var(--transition-spring), border-color 0.3s ease, box-shadow 0.3s ease;
     animation: fadeInUp 0.8s ease-out both;
 }
 
 .room-card:hover, .menu-card:hover, .chef-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-10px) scale(1.02);
     border-color: var(--gold);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
 }
 
 .room-img, .menu-img, .chef-img {
@@ -297,7 +308,7 @@ section:nth-of-type(odd) {
     background: linear-gradient(145deg, #111, #0a0a0a);
     border: 1px solid rgba(255,255,255,0.03);
     border-radius: 8px;
-    transition: all 0.5s;
+    transition: var(--transition-spring), border-color 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
 }
@@ -316,9 +327,9 @@ section:nth-of-type(odd) {
 }
 
 .feature:hover {
-    transform: translateY(-10px);
-    border-color: rgba(212, 175, 55, 0.3);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+    transform: translateY(-12px) scale(1.03);
+    border-color: rgba(212, 175, 55, 0.35);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.65);
 }
 
 .feature i {
@@ -508,7 +519,7 @@ footer p {
     text-decoration: none;
     padding: 10px 25px;
     border: 1px solid rgba(255,255,255,0.1);
-    transition: all 0.4s;
+    transition: var(--transition-spring), background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
     border-radius: 30px;
     text-transform: uppercase;
     font-size: 0.85rem;
@@ -519,7 +530,8 @@ footer p {
     color: var(--dark-bg);
     background: var(--gold);
     border-color: var(--gold);
-    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.35);
+    transform: translateY(-3px) scale(1.05);
 }
 
 /* Modal Overlay & Prompts */
@@ -665,4 +677,11 @@ footer p {
 .sim-footer button:first-child {
     border-right: 1px solid #d1d5db;
     color: #ef4444;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .btn-gold, .room-card, .menu-card, .chef-card, .feature, .submenu-links a {
+        transition: none !important;
+        transform: none !important;
+    }
 }
